@@ -140,7 +140,7 @@ export default function App() {
             <div className="bg-white rounded-3xl p-8 sm:p-12 border border-slate-300/20 relative overflow-hidden shadow-sm">
             
             {/* Context Badge explaining local construction realities */}
-            <div className="inline-flex flex-col sm:flex-row sm:items-center gap-3 bg-[#E9EFEA] border border-[#355E4B]/10 rounded-2xl p-4 mb-10 text-xs text-brand-teal max-w-4xl font-sans">
+            <div className="flex flex-col sm:flex-row sm:items-center gap-3 bg-[#E9EFEA] border border-[#355E4B]/10 rounded-2xl p-4 mb-10 text-xs text-brand-teal w-full font-sans">
               <span className="font-mono bg-[#355E4B] text-[#FAF8F0] font-bold px-2.5 py-1 rounded-lg shrink-0 text-[10px] tracking-wide text-center uppercase">
                 LATAR BELAKANG STRATEGIS
               </span>
@@ -150,7 +150,7 @@ export default function App() {
             </div>
 
             {/* Title Block */}
-            <div className="space-y-4 max-w-3xl mb-16">
+            <div className="space-y-4 w-full mb-16">
               <h2 className="text-3xl sm:text-5xl font-serif font-light leading-tight text-slate-900 tracking-tight">
                 Mentranslasikan Desain <span className="text-brand-teal italic font-light font-serif">3D Modeling</span> Menjadi Magnet Pemasaran Digital
               </h2>
