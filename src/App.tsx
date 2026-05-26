@@ -141,7 +141,7 @@ export default function App() {
             
             {/* Context Badge explaining local construction realities */}
             <div className="flex flex-col sm:flex-row sm:items-center gap-3 bg-[#E9EFEA] border border-[#355E4B]/10 rounded-2xl p-4 mb-10 text-xs text-brand-teal w-full font-sans">
-              <span className="font-mono bg-[#355E4B] text-[#FAF8F0] font-bold px-2.5 py-1 rounded-lg shrink-0 text-[10px] tracking-wide text-center uppercase">
+              <span className="font-mono bg-[#213C30] text-[#FAF8F0] font-semibold px-3 py-1.5 rounded-lg shrink-0 text-xs tracking-wider text-center uppercase border border-[#355E4B]/50 shadow-sm">
                 LATAR BELAKANG STRATEGIS
               </span>
               <p className="font-light leading-relaxed text-justify text-slate-750">
@@ -152,7 +152,7 @@ export default function App() {
             {/* Title Block */}
             <div className="space-y-4 w-full mb-16">
               <h2 className="text-3xl sm:text-5xl font-serif font-light leading-tight text-slate-900 tracking-tight">
-                Mentranslasikan Desain <span className="text-brand-teal italic font-light font-serif">3D Modeling</span> Menjadi Magnet Pemasaran Digital
+                Visualisasikan Desain <span className="text-brand-teal italic font-light font-serif">3D Modeling</span> Menjadi Magnet Pemasaran Digital
               </h2>
               <p className="text-slate-500 text-sm sm:text-base font-light leading-relaxed text-justify">
                 StayUp memadukan keindahan arsitektur berkonsep modern tropical Zen dari Summarecon Mutiara Makassar dengan narasi pesan (copywriting) premium yang menyentuh keinginan emosional dan prestise keluarga mapan di Sulawesi Selatan.
