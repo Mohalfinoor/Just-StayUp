@@ -4,7 +4,7 @@ import { motion, AnimatePresence } from "motion/react";
 // @ts-ignore
 import rinokaLogo from "../assets/images/rinoka_logo_image_1779784263810.jpg";
 // @ts-ignore
-import stayupLogo from "../assets/images/stayup_logo_1779803920242.png";
+import stayupLogo from "../assets/images/StayUp Logo.png";
 
 interface HeaderProps {
   onPrint: () => void;
@@ -37,12 +37,12 @@ export default function Header({
         
         {/* Brand Logo Alignment */}
         <div className="flex items-center gap-2 sm:gap-3 shrink-0">
-          {/* Authentic StayUp Brand Logo with deep green background matching the uploaded logo */}
-          <div className="w-[46px] h-[46px] rounded-full flex items-center justify-center shrink-0 shadow-sm border border-[#355E4B]/10 overflow-hidden bg-[#213C30] hover:scale-105 transition-transform duration-300">
+          {/* Authentic StayUp Brand Logo */}
+          <div className="w-[46px] h-[46px] rounded-full flex items-center justify-center shrink-0 shadow-md overflow-hidden bg-[#213C30] hover:scale-105 transition-transform duration-300">
             <img 
               src={stayupLogo} 
               alt="StayUp Logo" 
-              className="w-full h-full object-cover" 
+              className="w-full h-full object-contain p-1.5" 
               referrerPolicy="no-referrer"
             />
           </div>

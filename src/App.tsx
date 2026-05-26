@@ -39,7 +39,7 @@ import { initialAgencyProfile, initialClientProfile } from "./data";
 // @ts-ignore
 import yourFutureHome from "./assets/images/Your Future Home.png";
 // @ts-ignore
-import stayupLogo from "./assets/images/stayup_logo_1779803920242.png";
+import stayupLogo from "./assets/images/StayUp Logo.png";
 
 export default function App() {
   // Mockup customizer states - stores pasted URLs or falls back to elegant placeholders
@@ -516,13 +516,8 @@ export default function App() {
         <footer className="bg-[#213C30] border-t border-[#FAF8F0]/10 py-12 px-6 sm:px-8 text-center text-[11px] text-[#FAF8F0]/70 font-light tracking-wide space-y-6 w-full">
           {/* Centered StayUp Logo Icon Badge */}
           <div className="flex justify-center">
-            <div className="w-14 h-14 bg-[#1a3026] rounded-full flex items-center justify-center shadow-lg border border-[#FAF8F0]/10 overflow-hidden transition-transform duration-300 hover:scale-105">
-              <img 
-                src={stayupLogo} 
-                alt="StayUp Logo" 
-                className="w-full h-full object-cover" 
-                referrerPolicy="no-referrer"
-              />
+            <div className="w-14 h-14 rounded-full flex items-center justify-center shadow-lg bg-[#213C30] border border-[#FAF8F0]/10 overflow-hidden transition-transform duration-300 hover:scale-105">
+              <img src={stayupLogo} alt="StayUp Logo" className="w-full h-full object-contain p-2" referrerPolicy="no-referrer" />
             </div>
           </div>
 
