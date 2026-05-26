@@ -38,6 +38,8 @@ import { initialAgencyProfile, initialClientProfile } from "./data";
 
 // @ts-ignore
 import yourFutureHome from "./assets/images/Your Future Home.png";
+// @ts-ignore
+import stayupLogo from "./assets/images/stayup_logo_1779803920242.png";
 
 export default function App() {
   // Mockup customizer states - stores pasted URLs or falls back to elegant placeholders
@@ -514,18 +516,13 @@ export default function App() {
         <footer className="bg-[#213C30] border-t border-[#FAF8F0]/10 py-12 px-6 sm:px-8 text-center text-[11px] text-[#FAF8F0]/70 font-light tracking-wide space-y-6 w-full">
           {/* Centered StayUp Logo Icon Badge */}
           <div className="flex justify-center">
-            <div className="w-14 h-14 bg-[#1a3026] rounded-full flex items-center justify-center shadow-lg border border-[#FAF8F0]/10 p-2.5 transition-transform duration-300 hover:scale-105">
-              <svg viewBox="0 0 102 44" className="h-6 w-auto" fill="none" xmlns="http://www.w3.org/2000/svg">
-                {/* Stay in white */}
-                <text x="0" y="31" fill="#FFFFFF" fontFamily="'Plus Jakarta Sans', 'Inter', sans-serif" fontWeight="800" fontSize="25" letterSpacing="-1px">Stay</text>
-                {/* "u" with the upward arrow */}
-                <rect x="58" y="19" width="5.5" height="12" rx="1" fill="#F5C443" />
-                <path d="M58 29.5 C58 33.5, 69 33.5, 69 29.5" stroke="#F5C443" strokeWidth="5.5" strokeLinecap="round" fill="none" />
-                <rect x="66.5" y="14" width="5.5" height="17" fill="#F5C443" />
-                <polygon points="69.25,3 62,14 76.5,14" fill="#F5C443" />
-                {/* Letter p */}
-                <path d="M79.5 19.5 L79.5 37.5 M79.5 23 C82.5 20, 90.5 20, 90.5 25.5 C90.5 31, 82.5 31, 79.5 31" stroke="#F5C443" strokeWidth="5" strokeLinecap="round" strokeLinejoin="round" fill="none" />
-              </svg>
+            <div className="w-14 h-14 bg-[#1a3026] rounded-full flex items-center justify-center shadow-lg border border-[#FAF8F0]/10 overflow-hidden transition-transform duration-300 hover:scale-105">
+              <img 
+                src={stayupLogo} 
+                alt="StayUp Logo" 
+                className="w-full h-full object-cover" 
+                referrerPolicy="no-referrer"
+              />
             </div>
           </div>
 
