@@ -1,0 +1,105 @@
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400..900;1,400..900&family=Plus+Jakarta+Sans:ital,wght@0,300..800;1,300..800&family=JetBrains+Mono:ital,wght@0,300..700;1,300..700&display=swap');
+@import "tailwindcss";
+
+@theme {
+  --font-serif: "Playfair Display", Georgia, serif;
+  --font-sans: "Plus Jakarta Sans", ui-sans-serif, system-ui, sans-serif;
+  --font-mono: "JetBrains Mono", monospace;
+  
+  --color-brand-teal: #213C30;
+  --color-brand-teal-dark: #162720;
+  --color-brand-teal-light: #355E4B;
+  --color-brand-teal-pale: #E9EFEA;
+  --color-brand-ivory: #FAF8F0;
+  --color-brand-ivory-dark: #E3DFC6;
+  --color-brand-champagne: #FDFBF7;
+  --color-brand-gold: #F5C443;
+}
+
+body {
+  background-color: #ffffff;
+  color: #2c3e3d;
+  font-family: var(--font-sans);
+}
+
+@media print {
+  /* Force landscape layout for laptop-like widescreen aspect ratio and scaling */
+  @page {
+    size: A4 landscape;
+    margin: 8mm 12mm;
+  }
+  
+  html, body {
+    width: 1200px !important;
+    min-width: 1200px !important;
+    background-color: #eeeeee !important;
+    -webkit-print-color-adjust: exact !important;
+    print-color-adjust: exact !important;
+  }
+  
+  * {
+    -webkit-print-color-adjust: exact !important;
+    print-color-adjust: exact !important;
+    color-adjust: exact !important;
+  }
+
+  /* Force desktop-sized grid structure even if print renderer starts narrow */
+  .grid {
+    display: grid !important;
+  }
+  
+  /* Retain dual-column visual structures during printing */
+  .sm\:grid-cols-2, .md\:grid-cols-2, .lg\:grid-cols-2 {
+    grid-template-columns: repeat(2, minmax(0, 1fr)) !important;
+  }
+  .sm\:grid-cols-3, .md\:grid-cols-3, .lg\:grid-cols-3 {
+    grid-template-columns: repeat(3, minmax(0, 1fr)) !important;
+  }
+  .flex-col {
+    flex-direction: column !important;
+  }
+  .lg\:flex-row {
+    flex-direction: row !important;
+  }
+
+  /* Guard layouts from collapsing to mobile viewports */
+  .max-w-4xl, .max-w-5xl, .max-w-6xl, .max-w-7xl {
+    max-width: 100% !important;
+    width: 100% !important;
+  }
+
+  /* Specific background force overrides to guarantee compliance on older PDF drivers */
+  .bg-\[\#eeeeee\] {
+    background-color: #eeeeee !important;
+  }
+  .bg-\[\#213C30\] {
+    background-color: #213C30 !important;
+  }
+  .bg-\[\#355E4B\] {
+    background-color: #355E4B !important;
+  }
+  .bg-[#1a3026] {
+    background-color: #1a3026 !important;
+  }
+  .bg-[#FAF8F0] {
+    background-color: #FAF8F0 !important;
+  }
+  .bg-[#FAF1CC] {
+    background-color: #FAF1CC !important;
+  }
+  .bg-white {
+    background-color: #ffffff !important;
+  }
+
+  /* Prevent page-break issues inside clean visual components and pricing blocks */
+  section, .rounded-3xl, .bg-white, footer {
+    page-break-inside: avoid !important;
+    break-inside: avoid !important;
+  }
+
+  /* Keep components neat and tidy */
+  main {
+    padding-top: 15px !important;
+    padding-bottom: 15px !important;
+  }
+}

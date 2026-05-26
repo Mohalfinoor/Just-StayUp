@@ -1,0 +1,8 @@
+{
+  "name": "StayUP × Rinoka Rate Card",
+  "description": "Professional and elegant interactive rate card, proposal, and content planning suite for StayUP Agency in partnership with Rinoka by Summarecon Mutiara Makassar.",
+  "requestFramePermissions": [],
+  "majorCapabilities": [
+    "MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"
+  ]
+}
