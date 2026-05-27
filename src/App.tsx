@@ -152,7 +152,7 @@ export default function App() {
               <h2 className="text-2xl sm:text-3xl lg:text-4xl font-serif text-slate-900 tracking-tight leading-tight">
                 Mengubah Desain 3D Menjadi <span className="text-brand-teal italic font-light font-serif">Alat Penjualan yang Efektif</span>
               </h2>
-              <p className="text-slate-550 text-sm sm:text-base font-light leading-relaxed text-left max-w-4xl">
+              <p className="text-slate-550 text-sm sm:text-base font-light leading-relaxed text-left max-w-none">
                 Kami menyelaraskan keindahan desain arsitektur <strong className="font-semibold text-slate-800 font-sans">Zen Modern-Tropical</strong> khas Cluster Rinoka (Summarecon Mutiara Makassar) dengan strategi copywriting yang teruji. Solusi digital ini dirancang khusus untuk menarik perhatian para pengusaha, investor properti, dan keluarga mapan di Sulawesi Selatan sejak fase pra-penjualan.
               </p>
             </div>
@@ -359,7 +359,7 @@ export default function App() {
           <div className="max-w-7xl mx-auto px-6 sm:px-8">
             
             {/* Section Header */}
-            <div className="text-center md:text-left space-y-3 mb-12 max-w-3xl">
+            <div className="text-center md:text-left space-y-3 mb-12 max-w-none">
               <div className="inline-flex items-center gap-2 bg-[#E9EFEA] border border-[#355E4B]/15 px-3.5 py-1.5 rounded-full text-[10px] text-brand-teal font-sans font-bold tracking-widest uppercase">
                 <Sparkles className="w-3.5 h-3.5 text-brand-gold animate-pulse" />
                 REKOMENDASI SOLUSI PEMASARAN
