@@ -65,18 +65,18 @@ export default function App() {
     },
     {
       id: 2,
-      title: "Bingung Mikirin Interior Rumah?",
-      format: "Single Post - Engagement Campaign",
-      image: imageSix, // <-- MASUKKAN GAMBAR UNTUK POST #2 DI SINI (Contoh: "https://alamat-gambar.jpg" atau import file)
-      concept: "Visual interaktif bertema solusi penataan interior untuk hunian eksklusif Rinoka. Mengangkat pertanyaan mendasar seputar keselarasan warna, jenis tata pencahayaan (warm vs white light), serta trik cerdas menata ruangan agar fungsional, lapang, dan estetik dengan Call-to-Action (CTA) langsung.",
+      title: "Lokasi Rumah, Menentukan Kualitas Hidup",
+      format: "Single Post - Location Infographics",
+      image: imageFive, // <-- MASUKKAN GAMBAR UNTUK POST #2 DI SINI (Contoh: "https://alamat-gambar.jpg" atau import file)
+      concept: "Visual interaktif bertema urgensi lokasi hunian strategis yang menentukan kualitas hidup masa depan. Menyertakan infografis 3 pilar utama: Akses mudah & menghemat waktu, kedekatan dengan fasilitas penting, serta nilai investasi yang lebih menjanjikan. Dilengkapi dengan jajak pendapat pertanyaan di bagian bawah untuk merangsang interaksi prospek.",
       dimensions: "1080 x 1080 px"
     },
     {
       id: 3,
-      title: "Lokasi Rumah, Menentukan Kualitas Hidup",
-      format: "Single Post - Location Infographics",
-      image: imageFive, // <-- MASUKKAN GAMBAR UNTUK POST #3 DI SINI (Contoh: "https://alamat-gambar.jpg" atau import file)
-      concept: "Visual interaktif bertema urgensi lokasi hunian strategis yang menentukan kualitas hidup masa depan. Menyertakan infografis 3 pilar utama: Akses mudah & menghemat waktu, kedekatan dengan fasilitas penting, serta nilai investasi yang lebih menjanjikan. Dilengkapi dengan jajak pendapat pertanyaan di bagian bawah untuk merangsang interaksi prospek.",
+      title: "Bingung Mikirin Interior Rumah?",
+      format: "Single Post - Engagement Campaign",
+      image: imageSix, // <-- MASUKKAN GAMBAR UNTUK POST #3 DI SINI (Contoh: "https://alamat-gambar.jpg" atau import file)
+      concept: "Visual interaktif bertema solusi penataan interior untuk hunian eksklusif Rinoka. Mengangkat pertanyaan mendasar seputar keselarasan warna, jenis tata pencahayaan (warm vs white light), serta trik cerdas menata ruangan agar fungsional, lapang, dan estetik dengan Call-to-Action (CTA) langsung.",
       dimensions: "1080 x 1080 px"
     }
   ]);
