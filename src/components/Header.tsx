@@ -14,12 +14,12 @@ export default function Header({
   onPrint,
 }: HeaderProps) {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = React.useState(false);
-  const [activeSection, setActiveSection] = React.useState<string>("benefits");
+  const [activeSection, setActiveSection] = React.useState<string>("pricing");
 
   const sections = [
+    { id: "pricing", label: "Rate Card & Syarat", desc: "Investasi Bundling 2.5 Jt" },
     { id: "benefits", label: "Benefit Penawaran", desc: "Keuntungan Kolaborasi" },
     { id: "mockups", label: "Galeri Mockup Konten", desc: "Ruang Presentasi Visual" },
-    { id: "pricing", label: "Rate Card & Syarat", desc: "Investasi Bundling 2.5 Jt" },
   ];
 
   React.useEffect(() => {
