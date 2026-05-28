@@ -150,7 +150,7 @@ export default function App() {
         {/* SECTION 1: BENEFIT PENAWARAN (Keuntungan Utama Sinergi) */}
         <section id="benefits" className="scroll-mt-20">
           <div className="max-w-7xl mx-auto px-6 sm:px-8">
-            <div className="bg-white rounded-3xl p-8 sm:p-12 border border-slate-150 relative overflow-hidden shadow-[0_10px_30px_rgba(33,60,48,0.03)]">
+            <div className="bg-white rounded-3xl p-8 sm:p-12 relative overflow-hidden shadow-[0_10px_30px_rgba(33,60,48,0.03)]">
             
             {/* Header Strategy Badge & Title */}
             <div className="space-y-4 w-full mb-12 border-b border-slate-100 pb-8">
@@ -167,23 +167,20 @@ export default function App() {
             </div>
 
             {/* Scope Deliverables Strip - Minimal and clean */}
-            <div className="grid grid-cols-1 sm:grid-cols-3 gap-6 mb-12 p-6 bg-slate-50 border border-slate-100 rounded-2xl">
+            <div className="grid grid-cols-1 sm:grid-cols-3 gap-6 mb-12 p-6 bg-slate-50 border border-slate-100 rounded-2xl shadow-[inset_0_3px_10px_rgba(33,60,48,0.04)]">
               <div className="space-y-1">
-                <span className="text-[10px] font-mono text-slate-400 block font-bold uppercase tracking-wider">PAKET UTAMA</span>
                 <h4 className="text-sm font-bold text-slate-900">10 Desain Feed Utama</h4>
                 <p className="text-xs text-slate-500 font-light leading-relaxed">
                   Postingan gambar premium beresolusi tinggi untuk menyajikan keindahan fasad & kelebihan denah unit.
                 </p>
               </div>
               <div className="space-y-1 sm:border-l border-slate-200/60 sm:pl-6">
-                <span className="text-[10px] font-mono text-slate-400 block font-bold uppercase tracking-wider">PAKET AUDIO-VISUAL</span>
                 <h4 className="text-sm font-bold text-slate-900">5 Video Reels Cinematic</h4>
                 <p className="text-xs text-slate-500 font-light leading-relaxed">
-                  Video pendek interaktif dengan transisi estetik & aransemen musik yang memukau mata di media sosial.
+                   Video pendek interaktif dengan transisi estetik & aransemen musik yang memukau mata di media sosial.
                 </p>
               </div>
               <div className="space-y-1 sm:border-l border-slate-200/60 sm:pl-6">
-                <span className="text-[10px] font-mono text-slate-400 block font-bold uppercase tracking-wider">PAKET INTERAKTIF</span>
                 <h4 className="text-sm font-bold text-slate-900">10 Instagram Stories</h4>
                 <p className="text-xs text-slate-500 font-light leading-relaxed">
                   Template Stories interaktif (Polling/QnA) untuk memancing minat tanya-jawab calon pembeli ke DM.
@@ -194,8 +191,8 @@ export default function App() {
             {/* Grid of 6 Pillars with Clear, Humble, Beautifully Spaced Copywriting */}
             <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
               
-              {/* Card 1 */}
-              <div className="bg-white border border-slate-150 p-6 rounded-2xl hover:border-brand-teal/30 hover:shadow-[0_15px_30px_rgba(33,60,48,0.05)] transition-all duration-300 flex flex-col gap-3">
+               {/* Card 1 */}
+              <div className="bg-[#FAF8F0] border border-[#355E4B]/10 p-5 sm:p-6 rounded-2xl shadow-[inset_0_3px_10px_rgba(33,60,48,0.06)] hover:shadow-[0_15px_30px_rgba(33,60,48,0.08),_inset_0_3px_10px_rgba(33,60,48,0.06)] hover:scale-[1.01] transition-all duration-300 flex flex-col gap-3">
                 <div className="flex items-center gap-3">
                   <div className="w-11 h-11 bg-brand-pale text-brand-teal rounded-xl flex items-center justify-center shrink-0">
                     <Layers className="w-5 h-5 text-brand-teal" />
@@ -217,8 +214,8 @@ export default function App() {
                 </p>
               </div>
 
-              {/* Card 2 */}
-              <div className="bg-white border border-slate-150 p-6 rounded-2xl hover:border-brand-teal/30 hover:shadow-[0_15px_30px_rgba(33,60,48,0.05)] transition-all duration-300 flex flex-col gap-3">
+               {/* Card 2 */}
+              <div className="bg-[#FAF8F0] border border-[#355E4B]/10 p-5 sm:p-6 rounded-2xl shadow-[inset_0_3px_10px_rgba(33,60,48,0.06)] hover:shadow-[0_15px_30px_rgba(33,60,48,0.08),_inset_0_3px_10px_rgba(33,60,48,0.06)] hover:scale-[1.01] transition-all duration-300 flex flex-col gap-3">
                 <div className="flex items-center gap-3">
                   <div className="w-11 h-11 bg-brand-pale text-brand-teal rounded-xl flex items-center justify-center shrink-0">
                     <TrendingUp className="w-5 h-5 text-brand-teal" />
@@ -240,8 +237,8 @@ export default function App() {
                 </p>
               </div>
 
-              {/* Card 3 */}
-              <div className="bg-white border border-slate-150 p-6 rounded-2xl hover:border-brand-teal/30 hover:shadow-[0_15px_30px_rgba(33,60,48,0.05)] transition-all duration-300 flex flex-col gap-3">
+               {/* Card 3 */}
+              <div className="bg-[#FAF8F0] border border-[#355E4B]/10 p-5 sm:p-6 rounded-2xl shadow-[inset_0_3px_10px_rgba(33,60,48,0.06)] hover:shadow-[0_15px_30px_rgba(33,60,48,0.08),_inset_0_3px_10px_rgba(33,60,48,0.06)] hover:scale-[1.01] transition-all duration-300 flex flex-col gap-3">
                 <div className="flex items-center gap-3">
                   <div className="w-11 h-11 bg-brand-pale text-brand-teal rounded-xl flex items-center justify-center shrink-0">
                     <Smartphone className="w-5 h-5 text-brand-teal" />
@@ -263,8 +260,8 @@ export default function App() {
                 </p>
               </div>
 
-              {/* Card 4 */}
-              <div className="bg-white border border-slate-150 p-6 rounded-2xl hover:border-brand-teal/30 hover:shadow-[0_15px_30px_rgba(33,60,48,0.05)] transition-all duration-300 flex flex-col gap-3">
+               {/* Card 4 */}
+              <div className="bg-[#FAF8F0] border border-[#355E4B]/10 p-5 sm:p-6 rounded-2xl shadow-[inset_0_3px_10px_rgba(33,60,48,0.06)] hover:shadow-[0_15px_30px_rgba(33,60,48,0.08),_inset_0_3px_10px_rgba(33,60,48,0.06)] hover:scale-[1.01] transition-all duration-300 flex flex-col gap-3">
                 <div className="flex items-center gap-3">
                   <div className="w-11 h-11 bg-brand-pale text-brand-teal rounded-xl flex items-center justify-center shrink-0">
                     <Award className="w-5 h-5 text-brand-teal" />
@@ -286,8 +283,8 @@ export default function App() {
                 </p>
               </div>
 
-              {/* Card 5 */}
-              <div className="bg-white border border-slate-150 p-6 rounded-2xl hover:border-brand-teal/30 hover:shadow-[0_15px_30px_rgba(33,60,48,0.05)] transition-all duration-300 flex flex-col gap-3">
+               {/* Card 5 */}
+              <div className="bg-[#FAF8F0] border border-[#355E4B]/10 p-5 sm:p-6 rounded-2xl shadow-[inset_0_3px_10px_rgba(33,60,48,0.06)] hover:shadow-[0_15px_30px_rgba(33,60,48,0.08),_inset_0_3px_10px_rgba(33,60,48,0.06)] hover:scale-[1.01] transition-all duration-300 flex flex-col gap-3">
                 <div className="flex items-center gap-3">
                   <div className="w-11 h-11 bg-brand-pale text-brand-teal rounded-xl flex items-center justify-center shrink-0">
                     <Clock className="w-5 h-5 text-brand-teal" />
@@ -309,8 +306,8 @@ export default function App() {
                 </p>
               </div>
 
-              {/* Card 6 */}
-              <div className="bg-white border border-slate-150 p-6 rounded-2xl hover:border-brand-teal/30 hover:shadow-[0_15px_30px_rgba(33,60,48,0.05)] transition-all duration-300 flex flex-col gap-3">
+               {/* Card 6 */}
+              <div className="bg-[#FAF8F0] border border-[#355E4B]/10 p-5 sm:p-6 rounded-2xl shadow-[inset_0_3px_10px_rgba(33,60,48,0.06)] hover:shadow-[0_15px_30px_rgba(33,60,48,0.08),_inset_0_3px_10px_rgba(33,60,48,0.06)] hover:scale-[1.01] transition-all duration-300 flex flex-col gap-3">
                 <div className="flex items-center gap-3">
                   <div className="w-11 h-11 bg-brand-pale text-brand-teal rounded-xl flex items-center justify-center shrink-0">
                     <CheckCircle className="w-5 h-5 text-brand-teal" />
@@ -456,7 +453,6 @@ export default function App() {
                         <Briefcase className="w-5 h-5 text-brand-teal" />
                       </div>
                       <div>
-                        <span className="text-[9px] font-mono font-bold text-brand-teal/80 uppercase tracking-widest block">PILAR PERTAMA</span>
                         <h3 className="text-xl font-serif font-bold text-slate-900 leading-tight">
                           Arsitektur Konten Utama
                         </h3>
@@ -470,36 +466,36 @@ export default function App() {
 
                   {/* Program Deliverables List */}
                   <div className="space-y-4">
-                    <div className="flex items-start gap-3.5 bg-slate-50/75 p-4 rounded-2xl border border-slate-100 hover:bg-slate-50 transition-colors">
-                      <div className="w-6 h-6 rounded-full bg-brand-teal/10 flex items-center justify-center shrink-0 mt-0.5">
-                        <Check className="w-3.5 h-3.5 text-brand-teal" />
+                    <div className="flex items-start gap-3.5 bg-[#FAF8F0] p-4 rounded-2xl border border-slate-200/60 shadow-[inset_0_3px_6px_rgba(0,0,0,0.06)] hover:shadow-[inset_0_4px_8px_rgba(0,0,0,0.09)] transition-all duration-300">
+                      <div className="w-6 h-6 rounded-full bg-[#355E4B] flex items-center justify-center shrink-0 mt-0.5">
+                        <Check className="w-3.5 h-3.5 text-[#FAF8F0]" />
                       </div>
                       <div className="space-y-1">
-                        <span className="text-xs font-semibold text-slate-900 block">10 Media Feed Utama (Single & Carousel)</span>
+                        <span className="text-xs font-semibold text-slate-800 block">10 Media Feed Utama (Single & Carousel)</span>
                         <p className="text-[11px] text-slate-500 font-light leading-relaxed">
                           Visualisasi interior & fasad 3D berkualitas premium yang didukung copywriting persuasif bernarasi mewah untuk memicu kebanggaan memiliki unit.
                         </p>
                       </div>
                     </div>
 
-                    <div className="flex items-start gap-3.5 bg-slate-50/75 p-4 rounded-2xl border border-slate-100 hover:bg-slate-50 transition-colors">
-                      <div className="w-6 h-6 rounded-full bg-brand-teal/10 flex items-center justify-center shrink-0 mt-0.5">
-                        <Check className="w-3.5 h-3.5 text-brand-teal" />
+                    <div className="flex items-start gap-3.5 bg-[#FAF8F0] p-4 rounded-2xl border border-slate-200/60 shadow-[inset_0_3px_6px_rgba(0,0,0,0.06)] hover:shadow-[inset_0_4px_8px_rgba(0,0,0,0.09)] transition-all duration-300">
+                      <div className="w-6 h-6 rounded-full bg-[#355E4B] flex items-center justify-center shrink-0 mt-0.5">
+                        <Check className="w-3.5 h-3.5 text-[#FAF8F0]" />
                       </div>
                       <div className="space-y-1">
-                        <span className="text-xs font-semibold text-slate-900 block">5 Cinematic Reels Video (Video Transisi 3D)</span>
+                        <span className="text-xs font-semibold text-slate-800 block">5 Cinematic Reels Video (Video Transisi 3D)</span>
                         <p className="text-[11px] text-slate-500 font-light leading-relaxed">
                           Video berdurasi pendek (<em className="italic">short-form video</em>) dengan transisi estetik, efek suara imersif, dan pemetaan sudut ruang yang menawan.
                         </p>
                       </div>
                     </div>
 
-                    <div className="flex items-start gap-3.5 bg-slate-50/75 p-4 rounded-2xl border border-slate-100 hover:bg-slate-50 transition-colors">
-                      <div className="w-6 h-6 rounded-full bg-brand-teal/10 flex items-center justify-center shrink-0 mt-0.5">
-                        <Check className="w-3.5 h-3.5 text-brand-teal" />
+                    <div className="flex items-start gap-3.5 bg-[#FAF8F0] p-4 rounded-2xl border border-slate-200/60 shadow-[inset_0_3px_6px_rgba(0,0,0,0.06)] hover:shadow-[inset_0_4px_8px_rgba(0,0,0,0.09)] transition-all duration-300">
+                      <div className="w-6 h-6 rounded-full bg-[#355E4B] flex items-center justify-center shrink-0 mt-0.5">
+                        <Check className="w-3.5 h-3.5 text-[#FAF8F0]" />
                       </div>
                       <div className="space-y-1">
-                        <span className="text-xs font-semibold text-slate-900 block">10 Instagram Stories (Interactive Panels)</span>
+                        <span className="text-xs font-semibold text-slate-800 block">10 Instagram Stories (Interactive Panels)</span>
                         <p className="text-[11px] text-slate-500 font-light leading-relaxed">
                           Konten interaktif harian berupa polling kepuasan, slider desain ruangan, dan tanya-jawab guna memancing tanggapan pesan langsung (DM).
                         </p>
@@ -534,11 +530,6 @@ export default function App() {
                             <TrendingUp className="w-4 h-4" />
                           </div>
                           <div>
-                            <span className={`text-[9px] font-mono font-bold tracking-wider uppercase block transition-colors ${
-                              includeMetaAdsAddon ? "text-brand-teal" : "text-slate-400"
-                            }`}>
-                              AKSELERATOR PEMASARAN
-                            </span>
                             <h4 className={`text-sm font-bold leading-tight transition-colors ${
                               includeMetaAdsAddon ? "text-slate-900" : "text-slate-500"
                             }`}>
@@ -558,7 +549,7 @@ export default function App() {
                           <div className="flex items-center gap-2 text-[11px] font-light">
                             <span className={`w-4 h-4 rounded-full border flex items-center justify-center shrink-0 transition-all ${
                               includeMetaAdsAddon 
-                                ? "bg-brand-pale border-[#355E4B]/20 text-brand-teal" 
+                                ? "bg-[#355E4B] border-transparent text-[#FAF8F0]" 
                                 : "bg-slate-200/50 border-slate-300 text-slate-400"
                             }`}>
                               <Check className="w-2.5 h-2.5" />
@@ -568,7 +559,7 @@ export default function App() {
                           <div className="flex items-center gap-2 text-[11px] font-light">
                             <span className={`w-4 h-4 rounded-full border flex items-center justify-center shrink-0 transition-all ${
                               includeMetaAdsAddon 
-                                ? "bg-brand-pale border-[#355E4B]/20 text-brand-teal" 
+                                ? "bg-[#355E4B] border-transparent text-[#FAF8F0]" 
                                 : "bg-slate-200/50 border-slate-300 text-slate-400"
                             }`}>
                               <Check className="w-2.5 h-2.5" />
@@ -578,7 +569,7 @@ export default function App() {
                           <div className="flex items-center gap-2 text-[11px] font-light">
                             <span className={`w-4 h-4 rounded-full border flex items-center justify-center shrink-0 transition-all ${
                               includeMetaAdsAddon 
-                                ? "bg-brand-pale border-[#355E4B]/20 text-brand-teal" 
+                                ? "bg-[#355E4B] border-transparent text-[#FAF8F0]" 
                                 : "bg-slate-200/50 border-slate-300 text-slate-400"
                             }`}>
                               <Check className="w-2.5 h-2.5" />
@@ -588,7 +579,7 @@ export default function App() {
                           <div className="flex items-center gap-2 text-[11px] font-light">
                             <span className={`w-4 h-4 rounded-full border flex items-center justify-center shrink-0 transition-all ${
                               includeMetaAdsAddon 
-                                ? "bg-brand-pale border-[#355E4B]/20 text-brand-teal" 
+                                ? "bg-[#355E4B] border-transparent text-[#FAF8F0]" 
                                 : "bg-slate-200/50 border-slate-300 text-slate-400"
                             }`}>
                               <Check className="w-2.5 h-2.5" />
@@ -667,14 +658,6 @@ export default function App() {
 
                   {/* Proposal Summary Headers */}
                   <div className="border-b border-slate-100 pb-5">
-                    <div className="flex justify-between items-center mb-1">
-                      <span className="text-[9px] font-mono text-[#355E4B] tracking-wider uppercase font-bold">
-                        DOKUMEN RESMI PENAWARAN
-                      </span>
-                      <span className="text-[9px] font-mono bg-brand-teal text-[#FAF8F0] px-2.5 py-0.5 rounded-full font-bold">
-                        AKTIF
-                      </span>
-                    </div>
                     <h3 className="text-xl font-serif text-slate-950 font-semibold tracking-tight mt-1">Ringkasan Nilai Investasi</h3>
                     <p className="text-[9px] text-[#213C30]/70 font-semibold font-sans mt-0.5 uppercase tracking-wider">StayUp Solusi Kreatif x Cluster Rinoka</p>
                   </div>

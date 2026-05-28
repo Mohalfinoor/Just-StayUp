@@ -45,15 +45,44 @@ export default function Header({
   }, []);
 
   const handleScrollTo = (id: string) => {
+    setIsMobileMenuOpen(false);
+    
     const el = document.getElementById(id);
     if (el) {
-      el.scrollIntoView({ behavior: "smooth", block: "start" });
+      const rect = el.getBoundingClientRect();
+      const scrollTop = window.pageYOffset || document.documentElement.scrollTop;
+      const targetTop = rect.top + scrollTop - 95; // perfectly offset the fixed header with pleasant breathing room
+      
+      const startY = window.pageYOffset || document.documentElement.scrollTop;
+      const difference = targetTop - startY;
+      const startTime = performance.now();
+      const duration = 600; // smooth 600ms transition duration
+
+      const step = (currentTime: number) => {
+        const elapsed = currentTime - startTime;
+        const progress = Math.min(elapsed / duration, 1);
+        
+        // Quad ease-in-out easing
+        const ease = progress < 0.5 
+          ? 2 * progress * progress 
+          : -1 + (4 - 2 * progress) * progress;
+
+        window.scrollTo(0, startY + difference * ease);
+
+        if (progress < 1) {
+          requestAnimationFrame(step);
+        }
+      };
+
+      // Defer scroll animation just slightly to let the current turn of state transition finish
+      setTimeout(() => {
+        requestAnimationFrame(step);
+      }, 30);
     }
-    setIsMobileMenuOpen(false);
   };
 
   return (
-    <header className="fixed top-4 left-1/2 -translate-x-1/2 z-50 w-[calc(100%-2rem)] max-w-5xl overflow-visible print:hidden flex items-center justify-between gap-4 pointer-events-none animate-none">
+    <header className={`fixed top-4 left-1/2 -translate-x-1/2 z-50 w-[calc(100%-2rem)] max-w-5xl overflow-visible print:hidden flex items-center justify-between gap-4 animate-none ${isMobileMenuOpen ? "pointer-events-auto" : "pointer-events-none"}`}>
       
       {/* 1. Left Pill: Brand Logos (StayUp x Rinoka) with Glassmorphism Background */}
       <div className="bg-white/40 backdrop-blur-lg border border-white/50 shadow-lg shadow-black/5 rounded-full px-3 py-1.5 sm:px-4 sm:py-2 flex items-center gap-2 sm:gap-2.5 shrink-0 pointer-events-auto transition-transform duration-300 hover:scale-[1.02]">
