@@ -23,7 +23,7 @@ export default function PricingSection({
       <div className="max-w-7xl mx-auto px-6 sm:px-8">
         
         {/* Section Header */}
-        <div className="text-center md:text-left space-y-3 mb-12 max-w-none">
+        <div className="text-left space-y-3 mb-12 max-w-none">
           <div className="inline-flex items-center gap-2 bg-[#E9EFEA] border border-[#355E4B]/15 px-3.5 py-1.5 rounded-full text-[10px] text-brand-teal font-sans font-bold tracking-widest uppercase">
             <Sparkles className="w-3.5 h-3.5 text-brand-gold animate-pulse" />
             REKOMENDASI SOLUSI PEMASARAN
@@ -191,20 +191,29 @@ export default function PricingSection({
                     </div>
                   </div>
 
-                  <div className={`text-right sm:text-right shrink-0 border p-3 sm:p-4 rounded-2xl sm:min-w-[125px] transition-all duration-350 ${
+                  <div className={`text-left sm:text-right shrink-0 border p-3 sm:p-4 rounded-2xl sm:min-w-[125px] transition-all duration-350 ${
                     includeMetaAdsAddon 
                       ? "bg-[#FAF8F0] border-[#355E4B]/25 text-brand-teal shadow-xs" 
                       : "bg-slate-200/40 border-slate-300/40 text-slate-400"
                   }`}>
-                    <span className="text-[8px] font-mono block uppercase text-slate-400 font-bold">TARIF LAYANAN</span>
+                    <div className="flex items-center justify-between sm:block gap-2 mb-1 sm:mb-0">
+                      <span className="text-[8px] font-mono uppercase text-slate-400 font-bold">TARIF LAYANAN</span>
+                      <div className="sm:hidden flex items-center">
+                        <span className={`inline-block font-sans text-[8px] font-bold px-2 py-0.5 rounded-full uppercase tracking-wider transition-all ${
+                          includeMetaAdsAddon ? "bg-[#213C30] text-amber-300" : "bg-red-600 text-white"
+                        }`}>
+                          {includeMetaAdsAddon ? "DIAKTIFKAN" : "KLIK UNTUK AKTIF"}
+                        </span>
+                      </div>
+                    </div>
                     <span className={`font-mono text-sm sm:text-base font-bold block mt-0.5 transition-colors ${
                       includeMetaAdsAddon ? "text-brand-teal" : "text-slate-400"
                     }`}>
                       +{formatRupiah(metaAdsPrice)}
                     </span>
-                    <div className="mt-2 text-center">
-                       <span className={`inline-block font-sans text-[8px] font-bold px-2 py-0.5 rounded-full uppercase tracking-wider transition-all ${
-                         includeMetaAdsAddon ? "bg-[#213C30] text-amber-300" : "bg-slate-300 text-slate-550"
+                    <div className="hidden sm:block mt-2 text-center w-full">
+                       <span className={`block w-full font-sans text-[8px] font-bold py-1 rounded-md uppercase tracking-wider transition-all ${
+                         includeMetaAdsAddon ? "bg-[#213C30] text-amber-300" : "bg-red-600 text-white"
                        }`}>
                          {includeMetaAdsAddon ? "DIAKTIFKAN" : "KLIK UNTUK AKTIF"}
                        </span>
@@ -258,7 +267,7 @@ export default function PricingSection({
                   ) : (
                     <div className="flex justify-between items-center py-1 text-slate-400 italic">
                       <span className="text-[11px]">Pengelolaan Meta Ads Campaign</span>
-                      <span className="font-mono text-[8px] bg-slate-50 text-slate-400 px-2 py-0.5 rounded border border-slate-100/60 font-semibold uppercase tracking-wider font-sans">Belum Aktif</span>
+                      <span className="font-mono text-[8px] bg-red-600 text-white px-2 py-0.5 rounded border border-red-500/30 font-semibold uppercase tracking-wider font-sans">Belum Aktif</span>
                     </div>
                   )}
                 </div>
