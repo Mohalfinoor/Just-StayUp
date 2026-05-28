@@ -1,5 +1,5 @@
 import React from "react";
-import { Sparkles, Briefcase, Check, TrendingUp } from "lucide-react";
+import { Sparkles, Briefcase, Check, TrendingUp, MessageSquare, ArrowRight, MessageCircle } from "lucide-react";
 
 interface PricingSectionProps {
   includeMetaAdsAddon: boolean;
@@ -18,6 +18,21 @@ export default function PricingSection({
   totalInvestment,
   formatRupiah,
 }: PricingSectionProps) {
+  const getWhatsAppUrl = () => {
+    const baseMessage = `Halo StayUp!\n\nSaya tertarik dengan proposal kemitraan estetik untuk *Cluster Rinoka* (Summarecon Mutiara Makassar).\n\n*Rincian Paket Pilihan:*`;
+    
+    const mainPackage = `\n- Arsitektur Konten Utama (15 Feed & 10 Stories): ${formatRupiah(basePrice)}`;
+    const adsAddon = includeMetaAdsAddon 
+      ? `\n- Akselerator Pemasaran (Meta Ads Lead Gen 30 Hari): ${formatRupiah(metaAdsPrice)}` 
+      : `\n- Akselerator Pemasaran (Meta Ads): Tidak Diambil`;
+    
+    const totalValue = `\n\n*Total Estimasi Nilai Investasi:* *${formatRupiah(totalInvestment)}*`;
+    const footerMessage = `\n\nMohon informasi lebih lanjut mengenai langkah kerja sama berikutnya. Terima kasih!`;
+    
+    const fullText = `${baseMessage}${mainPackage}${adsAddon}${totalValue}${footerMessage}`;
+    return `https://wa.me/6281257374628?text=${encodeURIComponent(fullText)}`;
+  };
+
   return (
     <section id="pricing" className="scroll-mt-20 py-12">
       <div className="max-w-7xl mx-auto px-6 sm:px-8">
@@ -298,6 +313,43 @@ export default function PricingSection({
                       {formatRupiah(totalInvestment)}
                     </span>
                   </div>
+                </div>
+
+                {/* WhatsApp Order/Consultation Trigger */}
+                <div className="pt-2">
+                  <a
+                    href={getWhatsAppUrl()}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="relative overflow-hidden flex flex-col sm:flex-row items-center justify-between gap-4 glass-stroke-wa text-white p-4.5 rounded-2xl active:translate-y-0 outline-none select-none w-full text-left font-sans group relative z-10"
+                    id="btn-whatsapp-proposal"
+                  >
+                    {/* Glowing glossy overlay shine effect */}
+                    <div className="animate-wa-sweep" />
+                    <div className="flex items-center gap-3 w-full sm:w-auto relative z-10">
+                      <div className="w-10 h-10 rounded-xl bg-white/18 flex items-center justify-center shrink-0 shadow-inner">
+                        <svg 
+                          viewBox="0 0 24 24" 
+                          className="w-5.5 h-5.5 text-white fill-current animate-pulse" 
+                          xmlns="http://www.w3.org/2000/svg"
+                        >
+                          <path d="M12.004 0C5.373 0 0 5.373 0 12.004c0 2.112.551 4.164 1.597 5.973L.156 23.864a.563.563 0 0 0 .717.717l5.892-1.441c1.763.957 3.738 1.463 5.744 1.463C19.13 24.603 24.5 19.23 24.5 12.6c0-3.327-1.296-6.453-3.65-8.807C18.496 1.439 15.34 0 12.004 0zm0 2.25c2.738 0 5.31 1.066 7.243 3 1.933 1.933 3 4.505 3 7.243 0 5.652-4.591 10.244-10.243 10.244-1.782 0-3.518-.464-5.045-1.343a.562.562 0 0 0-.464-.047l-4.103 1 .998-4.081a.562.562 0 0 0-.056-.47C2.422 16.3 1.944 14.474 1.944 12.6c0-5.652 4.591-10.35 10.06-10.35zm5.176 11.238c-.284-.142-1.68-.83-1.94-.925-.262-.095-.453-.142-.643.142-.19.284-.738.925-.905 1.114-.166.19-.333.213-.617.071c-.284-.142-1.201-.442-2.287-1.41a8.55 8.55 0 0 1-1.583-1.969c-.166-.284-.018-.437.124-.579.128-.127.284-.33.426-.497.142-.166.19-.284.284-.473.095-.19.047-.355-.024-.497-.071-.142-.643-1.55-.881-2.119-.232-.555-.467-.479-.643-.489-.166-.008-.356-.009-.545-.009-.19 0-.5-.071-.76.213-.263.284-1.002.979-1.002 2.387s1.025 2.766 1.168 2.956c.142.19 2.016 3.08 4.885 4.316.682.294 1.215.47 1.63.602.686.218 1.31.187 1.803.114.55-.082 1.68-.687 1.917-1.354.237-.667.237-1.238.166-1.355-.071-.118-.261-.19-.545-.331z"/>
+                        </svg>
+                      </div>
+                      <div className="space-y-0.5">
+                        <span className="text-xs sm:text-sm font-bold block leading-tight tracking-tight text-white font-sans">
+                          Kirim Proposal via WhatsApp
+                        </span>
+                        <span className="text-[10px] text-white/95 font-light block leading-none font-sans">
+                          Hubungi tim StayUp dengan konsep otomatis
+                        </span>
+                      </div>
+                    </div>
+                    <div className="flex items-center gap-1.5 bg-white/15 hover:bg-white/20 px-3.5 py-2 rounded-xl text-[11px] font-bold tracking-widest uppercase transition-colors shrink-0 w-full sm:w-auto justify-center font-sans relative z-10">
+                      <span>KIRIM</span>
+                      <ArrowRight className="w-3.5 h-3.5 transition-transform duration-300 group-hover:translate-x-1" />
+                    </div>
+                  </a>
                 </div>
 
               </div>
