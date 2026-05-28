@@ -58,11 +58,11 @@ export default function Header({
       {/* 1. Left Pill: Brand Logos (StayUp x Rinoka) with Glassmorphism Background */}
       <div className="bg-white/40 backdrop-blur-lg border border-white/50 shadow-lg shadow-black/5 rounded-full px-3 py-1.5 sm:px-4 sm:py-2 flex items-center gap-2 sm:gap-2.5 shrink-0 pointer-events-auto transition-transform duration-300 hover:scale-[1.02]">
         {/* Authentic StayUp Brand Logo - Round Container */}
-        <div className="w-[32px] h-[32px] sm:w-[38px] sm:h-[38px] rounded-full flex items-center justify-center shrink-0 shadow-inner overflow-hidden bg-[#1a3026] border border-white/10">
+        <div className="w-[32px] h-[32px] sm:w-[38px] sm:h-[38px] rounded-full flex items-center justify-center shrink-0 overflow-hidden">
           <img 
             src={stayupLogo} 
             alt="StayUp Logo" 
-            className="w-full h-full object-contain p-1" 
+            className="w-full h-full object-cover rounded-full" 
             referrerPolicy="no-referrer"
           />
         </div>

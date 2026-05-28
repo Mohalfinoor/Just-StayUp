@@ -30,7 +30,8 @@ import {
   EyeOff,
   ChevronRight,
   RefreshCw,
-  Download
+  Download,
+  ChevronDown
 } from "lucide-react";
 import { motion, AnimatePresence } from "motion/react";
 import Header from "./components/Header";
@@ -89,6 +90,14 @@ export default function App() {
   const [activeLightboxImage, setActiveLightboxImage] = useState<string | null>(null);
   const [activeLightboxTitle, setActiveLightboxTitle] = useState<string | null>(null);
   const [showPrintModal, setShowPrintModal] = useState(false);
+  const [expandedCards, setExpandedCards] = useState<Record<number, boolean>>({});
+
+  const toggleCard = (id: number) => {
+    setExpandedCards(prev => ({
+      ...prev,
+      [id]: !prev[id]
+    }));
+  };
 
   // Helper formatting for Rupiah
   const formatRupiah = (val: number) => {
@@ -152,7 +161,7 @@ export default function App() {
               <h2 className="text-2xl sm:text-3xl lg:text-4xl font-serif text-slate-900 tracking-tight leading-tight">
                 Mengubah Desain 3D Menjadi <span className="text-brand-teal italic font-light font-serif">Alat Penjualan yang Efektif</span>
               </h2>
-              <p className="text-slate-550 text-sm sm:text-base font-light leading-relaxed text-left max-w-none">
+              <p className="text-slate-550 text-sm sm:text-base font-light leading-relaxed text-justify max-w-none">
                 Kami menyelaraskan keindahan desain arsitektur <strong className="font-semibold text-slate-800 font-sans">Zen Modern-Tropical</strong> khas Cluster Rinoka (Summarecon Mutiara Makassar) dengan strategi copywriting yang teruji. Solusi digital ini dirancang khusus untuk menarik perhatian para pengusaha, investor properti, dan keluarga mapan di Sulawesi Selatan sejak fase pra-penjualan.
               </p>
             </div>
@@ -186,81 +195,141 @@ export default function App() {
             <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
               
               {/* Card 1 */}
-              <div className="bg-white border border-slate-150 p-6 rounded-2xl hover:border-brand-teal/30 hover:shadow-[0_15px_30px_rgba(33,60,48,0.05)] transition-all duration-300 space-y-4">
-                <div className="w-11 h-11 bg-brand-pale text-brand-teal rounded-xl flex items-center justify-center shrink-0">
-                  <Layers className="w-5 h-5 text-brand-teal" />
+              <div className="bg-white border border-slate-150 p-6 rounded-2xl hover:border-brand-teal/30 hover:shadow-[0_15px_30px_rgba(33,60,48,0.05)] transition-all duration-300 flex flex-col gap-3">
+                <div className="flex items-center gap-3">
+                  <div className="w-11 h-11 bg-brand-pale text-brand-teal rounded-xl flex items-center justify-center shrink-0">
+                    <Layers className="w-5 h-5 text-brand-teal" />
+                  </div>
+                  <div 
+                    onClick={() => toggleCard(1)}
+                    className="flex-1 min-w-0 flex items-center justify-between gap-2 cursor-pointer md:cursor-default select-none group/title"
+                  >
+                    <h3 className="font-serif text-base font-bold text-slate-900 leading-tight">Optimalisasi Visual 3D</h3>
+                    <div className="md:hidden p-1 text-slate-400 group-hover/title:text-brand-teal rounded-full transition-all shrink-0">
+                      <ChevronDown className={`w-4 h-4 transition-transform duration-300 ${expandedCards[1] ? "rotate-180 text-brand-teal" : ""}`} />
+                    </div>
+                  </div>
                 </div>
-                <div className="space-y-2">
-                  <h3 className="font-serif text-base font-bold text-slate-900">Optimalisasi Visual 3D</h3>
-                  <p className="text-xs text-slate-500 font-light leading-relaxed text-left font-sans">
-                    Mengolah cetak biru arsitektur atau master render 3D statis Anda menjadi rangkaian postingan yang terstruktur, hidup, dan terlihat prestisius bagi calon pembeli.
-                  </p>
-                </div>
+                <p className={`text-xs text-slate-500 font-light leading-relaxed text-justify font-sans transition-all duration-300 ${
+                  expandedCards[1] ? "block" : "hidden md:block"
+                }`}>
+                  Mengolah cetak biru arsitektur atau master render 3D statis Anda menjadi rangkaian postingan yang terstruktur, hidup, dan terlihat prestisius bagi calon pembeli.
+                </p>
               </div>
 
               {/* Card 2 */}
-              <div className="bg-white border border-slate-150 p-6 rounded-2xl hover:border-brand-teal/30 hover:shadow-[0_15px_30px_rgba(33,60,48,0.05)] transition-all duration-300 space-y-4">
-                <div className="w-11 h-11 bg-brand-pale text-brand-teal rounded-xl flex items-center justify-center shrink-0">
-                  <TrendingUp className="w-5 h-5 text-brand-teal" />
+              <div className="bg-white border border-slate-150 p-6 rounded-2xl hover:border-brand-teal/30 hover:shadow-[0_15px_30px_rgba(33,60,48,0.05)] transition-all duration-300 flex flex-col gap-3">
+                <div className="flex items-center gap-3">
+                  <div className="w-11 h-11 bg-brand-pale text-brand-teal rounded-xl flex items-center justify-center shrink-0">
+                    <TrendingUp className="w-5 h-5 text-brand-teal" />
+                  </div>
+                  <div 
+                    onClick={() => toggleCard(2)}
+                    className="flex-1 min-w-0 flex items-center justify-between gap-2 cursor-pointer md:cursor-default select-none group/title"
+                  >
+                    <h3 className="font-serif text-base font-bold text-slate-900 leading-tight">Strategi Pemasaran Awal</h3>
+                    <div className="md:hidden p-1 text-slate-400 group-hover/title:text-brand-teal rounded-full transition-all shrink-0">
+                      <ChevronDown className={`w-4 h-4 transition-transform duration-300 ${expandedCards[2] ? "rotate-180 text-brand-teal" : ""}`} />
+                    </div>
+                  </div>
                 </div>
-                <div className="space-y-2">
-                  <h3 className="font-serif text-base font-bold text-slate-900">Strategi Pemasaran Awal</h3>
-                  <p className="text-xs text-slate-500 font-light leading-relaxed text-left font-sans">
-                    Menciptakan momentum ketertarikan sejak dini lewat kampanye online untuk mendata calon pembeli potensial sebelum gerbang fisik rumah contoh resmi dibuka.
-                  </p>
-                </div>
+                <p className={`text-xs text-slate-500 font-light leading-relaxed text-justify font-sans transition-all duration-300 ${
+                  expandedCards[2] ? "block" : "hidden md:block"
+                }`}>
+                  Menciptakan momentum ketertarikan sejak dini lewat kampanye online untuk mendata calon pembeli potensial sebelum gerbang fisik rumah contoh resmi dibuka.
+                </p>
               </div>
 
               {/* Card 3 */}
-              <div className="bg-white border border-slate-150 p-6 rounded-2xl hover:border-brand-teal/30 hover:shadow-[0_15px_30px_rgba(33,60,48,0.05)] transition-all duration-300 space-y-4">
-                <div className="w-11 h-11 bg-brand-pale text-brand-teal rounded-xl flex items-center justify-center shrink-0">
-                  <Smartphone className="w-5 h-5 text-brand-teal" />
+              <div className="bg-white border border-slate-150 p-6 rounded-2xl hover:border-brand-teal/30 hover:shadow-[0_15px_30px_rgba(33,60,48,0.05)] transition-all duration-300 flex flex-col gap-3">
+                <div className="flex items-center gap-3">
+                  <div className="w-11 h-11 bg-brand-pale text-brand-teal rounded-xl flex items-center justify-center shrink-0">
+                    <Smartphone className="w-5 h-5 text-brand-teal" />
+                  </div>
+                  <div 
+                    onClick={() => toggleCard(3)}
+                    className="flex-1 min-w-0 flex items-center justify-between gap-2 cursor-pointer md:cursor-default select-none group/title"
+                  >
+                    <h3 className="font-serif text-base font-bold text-slate-900 leading-tight">Instagram Stories Interaktif</h3>
+                    <div className="md:hidden p-1 text-slate-400 group-hover/title:text-brand-teal rounded-full transition-all shrink-0">
+                      <ChevronDown className={`w-4 h-4 transition-transform duration-300 ${expandedCards[3] ? "rotate-180 text-brand-teal" : ""}`} />
+                    </div>
+                  </div>
                 </div>
-                <div className="space-y-2">
-                  <h3 className="font-serif text-base font-bold text-slate-900">Instagram Stories Interaktif</h3>
-                  <p className="text-xs text-slate-500 font-light leading-relaxed text-left font-sans">
-                    Menggunakan stiker interaktif untuk menyaring peminat secara spesifik, mengarahkan mereka untuk membalas Stories, dan langsung terhubung dengan tim sales Anda.
-                  </p>
-                </div>
+                <p className={`text-xs text-slate-500 font-light leading-relaxed text-justify font-sans transition-all duration-300 ${
+                  expandedCards[3] ? "block" : "hidden md:block"
+                }`}>
+                  Menggunakan stiker interaktif untuk menyaring peminat secara spesifik, mengarahkan mereka untuk membalas Stories, dan langsung terhubung dengan tim sales Anda.
+                </p>
               </div>
 
               {/* Card 4 */}
-              <div className="bg-white border border-slate-150 p-6 rounded-2xl hover:border-brand-teal/30 hover:shadow-[0_15px_30px_rgba(33,60,48,0.05)] transition-all duration-300 space-y-4">
-                <div className="w-11 h-11 bg-brand-pale text-brand-teal rounded-xl flex items-center justify-center shrink-0">
-                  <Award className="w-5 h-5 text-brand-teal" />
+              <div className="bg-white border border-slate-150 p-6 rounded-2xl hover:border-brand-teal/30 hover:shadow-[0_15px_30px_rgba(33,60,48,0.05)] transition-all duration-300 flex flex-col gap-3">
+                <div className="flex items-center gap-3">
+                  <div className="w-11 h-11 bg-brand-pale text-brand-teal rounded-xl flex items-center justify-center shrink-0">
+                    <Award className="w-5 h-5 text-brand-teal" />
+                  </div>
+                  <div 
+                    onClick={() => toggleCard(4)}
+                    className="flex-1 min-w-0 flex items-center justify-between gap-2 cursor-pointer md:cursor-default select-none group/title"
+                  >
+                    <h3 className="font-serif text-base font-bold text-slate-900 leading-tight">Sentuhan Estetika Jepang-Tropis</h3>
+                    <div className="md:hidden p-1 text-slate-400 group-hover/title:text-brand-teal rounded-full transition-all shrink-0">
+                      <ChevronDown className={`w-4 h-4 transition-transform duration-300 ${expandedCards[4] ? "rotate-180 text-brand-teal" : ""}`} />
+                    </div>
+                  </div>
                 </div>
-                <div className="space-y-2">
-                  <h3 className="font-serif text-base font-bold text-slate-900">Sentuhan Estetika Jepang-Tropis</h3>
-                  <p className="text-xs text-slate-500 font-light leading-relaxed text-left font-sans">
-                    Menyimpan kemewahan dalam kesederhanaan desain minimalis yang disesuaikan secara pas untuk mencerminkan status sosial dan kebanggaan keluarga elite lokal.
-                  </p>
-                </div>
+                <p className={`text-xs text-slate-500 font-light leading-relaxed text-justify font-sans transition-all duration-300 ${
+                  expandedCards[4] ? "block" : "hidden md:block"
+                }`}>
+                  Menyimpan kemewahan dalam kesederhanaan desain minimalis yang disesuaikan secara pas untuk mencerminkan status sosial dan kebanggaan keluarga elite lokal.
+                </p>
               </div>
 
               {/* Card 5 */}
-              <div className="bg-white border border-slate-150 p-6 rounded-2xl hover:border-brand-teal/30 hover:shadow-[0_15px_30px_rgba(33,60,48,0.05)] transition-all duration-300 space-y-4">
-                <div className="w-11 h-11 bg-brand-pale text-brand-teal rounded-xl flex items-center justify-center shrink-0">
-                  <Clock className="w-5 h-5 text-brand-teal" />
+              <div className="bg-white border border-slate-150 p-6 rounded-2xl hover:border-brand-teal/30 hover:shadow-[0_15px_30px_rgba(33,60,48,0.05)] transition-all duration-300 flex flex-col gap-3">
+                <div className="flex items-center gap-3">
+                  <div className="w-11 h-11 bg-brand-pale text-brand-teal rounded-xl flex items-center justify-center shrink-0">
+                    <Clock className="w-5 h-5 text-brand-teal" />
+                  </div>
+                  <div 
+                    onClick={() => toggleCard(5)}
+                    className="flex-1 min-w-0 flex items-center justify-between gap-2 cursor-pointer md:cursor-default select-none group/title"
+                  >
+                    <h3 className="font-serif text-base font-bold text-slate-900 leading-tight">Produksi Rapi & Terjadwal</h3>
+                    <div className="md:hidden p-1 text-slate-400 group-hover/title:text-brand-teal rounded-full transition-all shrink-0">
+                      <ChevronDown className={`w-4 h-4 transition-transform duration-300 ${expandedCards[5] ? "rotate-180 text-brand-teal" : ""}`} />
+                    </div>
+                  </div>
                 </div>
-                <div className="space-y-2">
-                  <h3 className="font-serif text-base font-bold text-slate-900">Produksi Rapi & Terjadwal</h3>
-                  <p className="text-xs text-slate-500 font-light leading-relaxed text-left font-sans">
-                    Semua materi promosi dikerjakan dengan standar agensi profesional secara detail dan tuntas, serta diserahkan tepat waktu sesuai deadline yang disepakati.
-                  </p>
-                </div>
+                <p className={`text-xs text-slate-500 font-light leading-relaxed text-justify font-sans transition-all duration-300 ${
+                  expandedCards[5] ? "block" : "hidden md:block"
+                }`}>
+                  Semua materi promosi dikerjakan dengan standar agensi profesional secara detail dan tuntas, serta diserahkan tepat waktu sesuai deadline yang disepakati.
+                </p>
               </div>
 
               {/* Card 6 */}
-              <div className="bg-white border border-slate-150 p-6 rounded-2xl hover:border-brand-teal/30 hover:shadow-[0_15px_30px_rgba(33,60,48,0.05)] transition-all duration-300 space-y-4">
-                <div className="w-11 h-11 bg-brand-pale text-brand-teal rounded-xl flex items-center justify-center shrink-0">
-                  <CheckCircle className="w-5 h-5 text-brand-teal" />
+              <div className="bg-white border border-slate-150 p-6 rounded-2xl hover:border-brand-teal/30 hover:shadow-[0_15px_30px_rgba(33,60,48,0.05)] transition-all duration-300 flex flex-col gap-3">
+                <div className="flex items-center gap-3">
+                  <div className="w-11 h-11 bg-brand-pale text-brand-teal rounded-xl flex items-center justify-center shrink-0">
+                    <CheckCircle className="w-5 h-5 text-brand-teal" />
+                  </div>
+                  <div 
+                    onClick={() => toggleCard(6)}
+                    className="flex-1 min-w-0 flex items-center justify-between gap-2 cursor-pointer md:cursor-default select-none group/title"
+                  >
+                    <h3 className="font-serif text-base font-bold text-slate-900 leading-tight">Alur Kerja Praktis & Mudah</h3>
+                    <div className="md:hidden p-1 text-slate-400 group-hover/title:text-brand-teal rounded-full transition-all shrink-0">
+                      <ChevronDown className={`w-4 h-4 transition-transform duration-300 ${expandedCards[6] ? "rotate-180 text-brand-teal" : ""}`} />
+                    </div>
+                  </div>
                 </div>
-                <div className="space-y-2">
-                  <h3 className="font-serif text-base font-bold text-slate-900">Alur Kerja Praktis & Mudah</h3>
-                  <p className="text-xs text-slate-500 font-light leading-relaxed text-left font-sans">
-                    Sistem folder peninjauan terpusat memudahkan Anda melihat semua rancangan konten, memberikan revisi, hingga menyetujui materi siap tayang kapan saja.
-                  </p>
-                </div>
+                <p className={`text-xs text-slate-500 font-light leading-relaxed text-justify font-sans transition-all duration-300 ${
+                  expandedCards[6] ? "block" : "hidden md:block"
+                }`}>
+                  Sistem folder peninjauan terpusat memudahkan Anda melihat semua rancangan konten, memberikan revisi, hingga menyetujui materi siap tayang kapan saja.
+                </p>
               </div>
 
             </div>
@@ -367,7 +436,7 @@ export default function App() {
               <h2 className="text-3xl sm:text-4xl font-serif text-slate-950 font-light tracking-tight leading-tight">
                 Proposal Penawaran <span className="text-brand-teal italic font-light font-serif">Kemitraan Estetik</span> Cluster Rinoka
               </h2>
-              <p className="text-xs sm:text-sm text-slate-500 font-light leading-relaxed">
+              <p className="text-xs sm:text-sm text-slate-500 font-light leading-relaxed text-justify">
                 Kami tidak sekadar memproduksi konten media sosial secara acak. StayUp menyusun strategi visual terpadu berkelas tinggi untuk memicu konversi prospek sejak fase pra-penjualan (<em className="italic">pre-selling</em>).
               </p>
             </div>
@@ -448,10 +517,10 @@ export default function App() {
                     includeMetaAdsAddon ? "bg-brand-teal/40 group-hover:opacity-40" : "bg-transparent opacity-0"
                   }`} />
                   
-                  <div className={`relative bg-white rounded-3xl p-6 sm:p-8 border transition-all duration-500 cursor-pointer ${
+                  <div className={`relative rounded-3xl p-6 sm:p-8 border transition-all duration-500 cursor-pointer select-none ${
                     includeMetaAdsAddon 
-                      ? "border-[#213C30]/40 shadow-[0_20px_50px_rgba(33,60,48,0.15)] bg-slate-50/95" 
-                      : "border-slate-100 shadow-[0_15px_40px_rgba(0,0,0,0.03)] hover:border-slate-350/50 hover:shadow-[0_20px_45px_rgba(0,0,0,0.06)]"
+                      ? "border-[#213C30]/40 shadow-[0_20px_50px_rgba(33,60,48,0.12)] bg-white" 
+                      : "border-slate-200 bg-slate-100/70 opacity-85 hover:opacity-100 shadow-[0_5px_15px_rgba(0,0,0,0.02)]"
                   }`}
                   onClick={() => setIncludeMetaAdsAddon(!includeMetaAdsAddon)}
                   id="btn-toggle-meta-ads"
@@ -459,48 +528,72 @@ export default function App() {
                     <div className="flex flex-col sm:flex-row justify-between sm:items-start gap-4">
                       <div className="space-y-3 flex-1">
                         <div className="flex items-center gap-2.5">
-                          <div className={`w-8 h-8 rounded-lg flex items-center justify-center shrink-0 transition-colors ${
-                            includeMetaAdsAddon ? "bg-[#213C30] text-[#FAF8F0]" : "bg-brand-pale text-brand-teal"
+                          <div className={`w-8 h-8 rounded-lg flex items-center justify-center shrink-0 transition-all duration-300 ${
+                            includeMetaAdsAddon ? "bg-[#213C30] text-[#FAF8F0] scale-105" : "bg-slate-200 text-slate-400"
                           }`}>
                             <TrendingUp className="w-4 h-4" />
                           </div>
                           <div>
-                            <span className="text-[9px] font-mono font-bold text-[#355E4B] tracking-wider uppercase block">AKSELERATOR PEMASARAN</span>
-                            <h4 className="text-sm font-bold text-slate-900 leading-tight">
+                            <span className={`text-[9px] font-mono font-bold tracking-wider uppercase block transition-colors ${
+                              includeMetaAdsAddon ? "text-brand-teal" : "text-slate-400"
+                            }`}>
+                              AKSELERATOR PEMASARAN
+                            </span>
+                            <h4 className={`text-sm font-bold leading-tight transition-colors ${
+                              includeMetaAdsAddon ? "text-slate-900" : "text-slate-500"
+                            }`}>
                               Meta Ads Lead Generation Campaign (Opsional)
                             </h4>
                           </div>
                         </div>
 
-                        <p className="text-xs text-slate-500 font-light leading-relaxed">
+                        <p className={`text-xs font-light leading-relaxed transition-colors ${
+                          includeMetaAdsAddon ? "text-slate-500" : "text-slate-450"
+                        }`}>
                           Tambahkan akselerator ini untuk menyalurkan seluruh materi kreatif langsung ke layar perangkat calon pembeli spesifik yang bermukim di Makassar, Gowa, dan Maros.
                         </p>
 
                         {/* Interactive checklist grids of Meta Ads capabilities */}
                         <div className="grid grid-cols-1 sm:grid-cols-2 gap-2.5 pt-2">
-                          <div className="flex items-center gap-2 text-[11px] text-slate-600 font-light">
-                            <span className="w-4 h-4 rounded-full bg-brand-pale border border-[#355E4B]/15 flex items-center justify-center shrink-0">
-                              <Check className="w-2.5 h-2.5 text-brand-teal" />
+                          <div className="flex items-center gap-2 text-[11px] font-light">
+                            <span className={`w-4 h-4 rounded-full border flex items-center justify-center shrink-0 transition-all ${
+                              includeMetaAdsAddon 
+                                ? "bg-brand-pale border-[#355E4B]/20 text-brand-teal" 
+                                : "bg-slate-200/50 border-slate-300 text-slate-400"
+                            }`}>
+                              <Check className="w-2.5 h-2.5" />
                             </span>
-                            <span>Targeting Segmen Pengusaha / Eksekutif Mapan</span>
+                            <span className={includeMetaAdsAddon ? "text-slate-600 font-medium" : "text-slate-400"}>Targeting Segmen Pengusaha / Eksekutif Mapan</span>
                           </div>
-                          <div className="flex items-center gap-2 text-[11px] text-slate-600 font-light">
-                            <span className="w-4 h-4 rounded-full bg-brand-pale border border-[#355E4B]/15 flex items-center justify-center shrink-0">
-                              <Check className="w-2.5 h-2.5 text-brand-teal" />
+                          <div className="flex items-center gap-2 text-[11px] font-light">
+                            <span className={`w-4 h-4 rounded-full border flex items-center justify-center shrink-0 transition-all ${
+                              includeMetaAdsAddon 
+                                ? "bg-brand-pale border-[#355E4B]/20 text-brand-teal" 
+                                : "bg-slate-200/50 border-slate-300 text-slate-400"
+                            }`}>
+                              <Check className="w-2.5 h-2.5" />
                             </span>
-                            <span>Setup Form leads instan pemicu Chat Tim Sales</span>
+                            <span className={includeMetaAdsAddon ? "text-slate-600 font-medium" : "text-slate-400"}>Setup Form leads instan pemicu Chat Tim Sales</span>
                           </div>
-                          <div className="flex items-center gap-2 text-[11px] text-slate-600 font-light">
-                            <span className="w-4 h-4 rounded-full bg-brand-pale border border-[#355E4B]/15 flex items-center justify-center shrink-0">
-                              <Check className="w-2.5 h-2.5 text-brand-teal" />
+                          <div className="flex items-center gap-2 text-[11px] font-light">
+                            <span className={`w-4 h-4 rounded-full border flex items-center justify-center shrink-0 transition-all ${
+                              includeMetaAdsAddon 
+                                ? "bg-brand-pale border-[#355E4B]/20 text-brand-teal" 
+                                : "bg-slate-200/50 border-slate-300 text-slate-400"
+                            }`}>
+                              <Check className="w-2.5 h-2.5" />
                             </span>
-                            <span>Optimasi budget iklan harian secara real-time</span>
+                            <span className={includeMetaAdsAddon ? "text-slate-600 font-medium" : "text-slate-400"}>Optimasi budget iklan harian secara real-time</span>
                           </div>
-                          <div className="flex items-center gap-2 text-[11px] text-slate-600 font-light">
-                            <span className="w-4 h-4 rounded-full bg-brand-pale border border-[#355E4B]/15 flex items-center justify-center shrink-0">
-                              <Check className="w-2.5 h-2.5 text-brand-teal" />
+                          <div className="flex items-center gap-2 text-[11px] font-light">
+                            <span className={`w-4 h-4 rounded-full border flex items-center justify-center shrink-0 transition-all ${
+                              includeMetaAdsAddon 
+                                ? "bg-brand-pale border-[#355E4B]/20 text-brand-teal" 
+                                : "bg-slate-200/50 border-slate-300 text-slate-400"
+                            }`}>
+                              <Check className="w-2.5 h-2.5" />
                             </span>
-                            <span>Laporan jangkauan terperinci (30 Hari)</span>
+                            <span className={includeMetaAdsAddon ? "text-slate-600 font-medium" : "text-slate-400"}>Laporan jangkauan terperinci (30 Hari)</span>
                           </div>
                         </div>
 
@@ -509,14 +602,20 @@ export default function App() {
                         </div>
                       </div>
 
-                      <div className="text-right sm:text-right shrink-0 bg-slate-50 border border-slate-100 p-3 sm:p-4 rounded-2xl sm:min-w-[120px] transition-colors group-hover:bg-slate-100/30">
-                        <span className="text-[8px] font-mono block uppercase text-slate-400">TARIF LAYANAN</span>
-                        <span className="font-mono text-sm sm:text-base font-bold text-slate-900 block mt-0.5">
+                      <div className={`text-right sm:text-right shrink-0 border p-3 sm:p-4 rounded-2xl sm:min-w-[125px] transition-all duration-350 ${
+                        includeMetaAdsAddon 
+                          ? "bg-[#FAF8F0] border-[#355E4B]/25 text-brand-teal shadow-xs" 
+                          : "bg-slate-200/40 border-slate-300/40 text-slate-400"
+                      }`}>
+                        <span className="text-[8px] font-mono block uppercase text-slate-400 font-bold">TARIF LAYANAN</span>
+                        <span className={`font-mono text-sm sm:text-base font-bold block mt-0.5 transition-colors ${
+                          includeMetaAdsAddon ? "text-brand-teal" : "text-slate-400"
+                        }`}>
                           +{formatRupiah(metaAdsPrice)}
                         </span>
                         <div className="mt-2">
-                          <span className={`inline-block font-sans text-[8px] font-bold px-2 py-0.5 rounded-full uppercase tracking-wider ${
-                            includeMetaAdsAddon ? "bg-[#213C30] text-amber-300" : "bg-slate-200 text-slate-550"
+                          <span className={`inline-block font-sans text-[8px] font-bold px-2 py-0.5 rounded-full uppercase tracking-wider transition-all ${
+                            includeMetaAdsAddon ? "bg-[#213C30] text-amber-300" : "bg-slate-300 text-slate-550"
                           }`}>
                             {includeMetaAdsAddon ? "DIAKTIFKAN" : "KLIK UNTUK AKTIF"}
                           </span>
@@ -628,8 +727,8 @@ export default function App() {
                     </div>
 
                     {/* Total Value Frame with 3D deep glow style */}
-                    <div className="bg-slate-950 text-[#FAF8F0] p-6 rounded-2xl space-y-1 shadow-[inset_0_4px_12px_rgba(0,0,0,0.8)] border border-slate-800 relative overflow-hidden">
-                      <div className="absolute top-0 right-0 w-24 h-24 bg-brand-teal/20 rounded-full blur-xl pointer-events-none"></div>
+                    <div className="bg-[#355E4B] text-[#FAF8F0] p-6 rounded-2xl space-y-1 shadow-[inset_0_4px_12px_rgba(0,0,0,0.2)] border border-[#355E4B]/25 relative overflow-hidden">
+                      <div className="absolute top-0 right-0 w-24 h-24 bg-brand-teal/30 rounded-full blur-xl pointer-events-none"></div>
                       <span className="text-[9px] font-mono text-slate-300 tracking-wider uppercase block font-semibold">
                         TOTAL ESTIMASI NILAI INVESTASI:
                       </span>
@@ -656,22 +755,12 @@ export default function App() {
         <footer className="bg-[#213C30] border-t border-[#FAF8F0]/10 py-12 px-6 sm:px-8 text-center text-[11px] text-[#FAF8F0]/70 font-light tracking-wide space-y-6 w-full">
           {/* Centered StayUp Logo Icon Badge */}
           <div className="flex justify-center">
-            <div className="w-14 h-14 rounded-full flex items-center justify-center shadow-lg bg-[#213C30] border border-[#FAF8F0]/10 overflow-hidden transition-transform duration-300 hover:scale-105">
-              <img src={stayupLogo} alt="StayUp Logo" className="w-full h-full object-contain p-2" referrerPolicy="no-referrer" />
+            <div className="w-14 h-14 rounded-full flex items-center justify-center overflow-hidden transition-transform duration-300 hover:scale-105">
+              <img src={stayupLogo} alt="StayUp Logo" className="w-full h-full object-cover rounded-full" referrerPolicy="no-referrer" />
             </div>
           </div>
 
-          <div className="flex flex-col items-center gap-3 print:hidden">
-            <button
-              onClick={handlePrint}
-              id="footer-download-btn"
-              className="inline-flex items-center gap-2 bg-[#F5C443] hover:bg-[#F5C443]/90 text-slate-900 font-sans font-semibold text-xs py-3 px-6 rounded-xl transition-all duration-300 shadow-md hover:shadow-xl hover:-translate-y-0.5 cursor-pointer"
-            >
-              <Download className="w-4 h-4 text-slate-900" />
-              Unduh / Cetak Proposal Rate Card (PDF)
-            </button>
-            <p className="text-[10px] text-[#FAF8F0]/40 font-light">Membuka dialog pencetakan browser untuk disimpan sebagai berkas PDF premium</p>
-          </div>
+
 
           <div className="space-y-1 pt-2">
             <p className="font-semibold text-[#FAF8F0] tracking-wider text-xs">StayUp Creative Agency • Makassar</p>
