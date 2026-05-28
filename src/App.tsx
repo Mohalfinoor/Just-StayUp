@@ -174,13 +174,13 @@ export default function App() {
                   Postingan gambar premium beresolusi tinggi untuk menyajikan keindahan fasad & kelebihan denah unit.
                 </p>
               </div>
-              <div className="space-y-1 sm:border-l border-slate-200/60 sm:pl-6">
+              <div className="space-y-1 border-t border-slate-200/60 pt-6 sm:border-t-0 sm:pt-0 sm:border-l sm:pl-6">
                 <h4 className="text-sm font-bold text-slate-900">5 Video Reels Cinematic</h4>
                 <p className="text-xs text-slate-500 font-light leading-relaxed">
                    Video pendek interaktif dengan transisi estetik & aransemen musik yang memukau mata di media sosial.
                 </p>
               </div>
-              <div className="space-y-1 sm:border-l border-slate-200/60 sm:pl-6">
+              <div className="space-y-1 border-t border-slate-200/60 pt-6 sm:border-t-0 sm:pt-0 sm:border-l sm:pl-6">
                 <h4 className="text-sm font-bold text-slate-900">10 Instagram Stories</h4>
                 <p className="text-xs text-slate-500 font-light leading-relaxed">
                   Template Stories interaktif (Polling/QnA) untuk memancing minat tanya-jawab calon pembeli ke DM.
